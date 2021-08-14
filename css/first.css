@@ -20,14 +20,14 @@
   box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
 }
 @font-face {
-  font-family: 'Dosis';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@20.5.30/Dosis/Dosis-Medium.ttf");
+  font-family: 'UbuntuMono';
+  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
 }
 @font-face {
-  font-family: 'Dosis';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts@20.5.30/Dosis/Dosis-Medium.ttf");
+  font-family: 'Varela Round';
+  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
 }
@@ -39,14 +39,14 @@
   --color-card: #fff;
   --color-text: #444;
   --color-block: #f6f6f6;
-  --color-inlinecode: #c74f00;
+  --color-inlinecode: #d56d28;
   --color-codeblock: #fff7ea;
-  --color-h1: #3a3a3a;
-  --color-h2: #3a3a3a;
-  --color-h3: #333;
+  --color-h1: #444;
+  --color-h2: #444;
+  --color-h3: #444;
   --color-h4: #444;
-  --color-h5: #555;
-  --color-h6: #666;
+  --color-h5: #444;
+  --color-h6: #444;
   --color-p: #444;
   --color-list: #666;
   --color-list-hl: #36ac91;
@@ -62,7 +62,7 @@ html {
   color: var(--color-text);
   width: 100%;
   height: 100%;
-  font-family: Dosis, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
   font-size: 16px;
 }
 html >::-webkit-scrollbar {
@@ -78,7 +78,7 @@ html >::-webkit-scrollbar-thumb {
   border-radius: 2px;
 }
 html >::-webkit-scrollbar-thumb:hover {
-  background: #ff5722;
+  background: #b3e5fc;
 }
 body {
   background-color: var(--color-site-body);
@@ -132,7 +132,7 @@ h6 {
   font-weight: normal;
 }
 a {
-  color: #2196f3;
+  color: #81d4fa;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.28s ease;
@@ -141,7 +141,7 @@ a {
   -o-transition: all 0.28s ease;
 }
 a:hover {
-  color: #ff5722;
+  color: #b3e5fc;
 }
 a:active,
 a:hover {
@@ -568,7 +568,7 @@ th {
   margin-top: 32px;
 }
 .cover-wrapper .cover-body .title {
-  font-family: Dosis, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
   font-size: 3.125rem;
   line-height: 1.2;
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
@@ -808,7 +808,7 @@ th {
     border-radius: 0;
   }
   .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb:hover {
-    background: #ff5722;
+    background: #b3e5fc;
   }
 }
 @supports (backdrop-filter: blur(20px)) {
@@ -932,7 +932,7 @@ th {
   line-height: 64px;
   padding: 0 24px;
   font-size: 1.25rem;
-  font-family: Dosis, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
 }
 .l_header #wrapper .nav-main .title img {
   height: 64px;
@@ -943,7 +943,7 @@ th {
 }
 .l_header .nav-sub .title {
   font-weight: bold;
-  font-family: Dosis, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
   line-height: 1.2;
   max-height: 64px;
   white-space: normal;
@@ -1643,7 +1643,7 @@ ul.list-v >li>a:hover {
   z-index: 1;
 }
 #u-search .modal-footer .nav:hover {
-  color: #ff5722;
+  color: #b3e5fc;
 }
 #u-search .modal-footer .nav.btn-next {
   margin-left: 16px;
@@ -1676,7 +1676,7 @@ ul.list-v >li>a:hover {
   border-radius: 2px;
 }
 #u-search .modal-body::-webkit-scrollbar-thumb:hover {
-  background: #ff5722;
+  background: #b3e5fc;
 }
 #u-search .modal-body .modal-results {
   list-style: none;
@@ -1744,7 +1744,7 @@ ul.list-v >li>a:hover {
     --color-site-bg: #222;
     --color-site-inner: #eee;
     --color-site-footer: #aaa;
-    --color-card: #333;
+    --color-card: #444;
     --color-text: #eee;
     --color-block: #3a3a3a;
     --color-codeblock: #343a3c;
@@ -1900,13 +1900,26 @@ ul.list-v >li>a:hover {
   :root:not([data-user-color-scheme]) .aplayer.aplayer-withlist .aplayer-info {
     border-bottom: 1px solid var(--color-block);
   }
+  :root:not([data-user-color-scheme]) #valine_container button {
+    background-color: var(--color-block) !important;
+  }
+  :root:not([data-user-color-scheme]) #valine_container .vcards .vcontent.expand:before {
+    background: none !important;
+  }
+  :root:not([data-user-color-scheme]) #valine_container .vcards .vcontent.expand:after {
+    background: #393c40 !important;
+  }
+  :root:not([data-user-color-scheme]) .v[data-class=v] code,
+  :root:not([data-user-color-scheme]) .v[data-class=v] pre {
+    background-color: #332828 !important;
+  }
 }
 [data-user-color-scheme='dark'] {
   --color-site-body: #000;
   --color-site-bg: #222;
   --color-site-inner: #eee;
   --color-site-footer: #aaa;
-  --color-card: #333;
+  --color-card: #444;
   --color-text: #eee;
   --color-block: #3a3a3a;
   --color-codeblock: #343a3c;
@@ -2066,6 +2079,19 @@ ul.list-v >li>a:hover {
 }
 [data-user-color-scheme='dark'] .aplayer.aplayer-withlist .aplayer-info {
   border-bottom: 1px solid var(--color-block);
+}
+[data-user-color-scheme='dark'] #valine_container button {
+  background-color: var(--color-block) !important;
+}
+[data-user-color-scheme='dark'] #valine_container .vcards .vcontent.expand:before {
+  background: none !important;
+}
+[data-user-color-scheme='dark'] #valine_container .vcards .vcontent.expand:after {
+  background: #393c40 !important;
+}
+[data-user-color-scheme='dark'] .v[data-class=v] code,
+[data-user-color-scheme='dark'] .v[data-class=v] pre {
+  background-color: #332828 !important;
 }
 @media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
   .l_header .m_search {
