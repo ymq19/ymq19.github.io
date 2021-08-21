@@ -649,6 +649,102 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><strong>解决方案：ie中使用filter: alpha(opacity=0);（兼容IE8及以下的IE浏览器） firefox中使用opacity: 0; 兼容时都写上即可</strong></p>
 </li>
 </ol>
+<h2 id="列出display的值并说明他们的作用？"><a href="#列出display的值并说明他们的作用？" class="headerlink" title="列出display的值并说明他们的作用？"></a>列出display的值并说明他们的作用？</h2><ul>
+<li><strong>默认值：</strong>inline</li>
+<li><strong>none：</strong>隐藏对象。与visibility的属性hidden值不同，其不为被隐藏的对象保留物理空间</li>
+<li><strong>inline：</strong>指定对象为内联元素</li>
+<li><strong>inline-block：</strong>指定元素为内联块元素</li>
+<li><strong>block：</strong>指定元素为块元素</li>
+<li><strong>list-item：</strong>指定对象为列表项目</li>
+<li><strong>table：</strong>指定对象为块元素的表格，类同于标签<code>&lt;table&gt;</code></li>
+<li><strong>inline-table：</strong>指定对象作为内联元素级的表格，类同于html标签<code>&lt;table&gt;</code></li>
+<li><strong>table-caption：</strong>指定对象作为表格标题，类同于html标签<code>&lt;caption&gt;</code></li>
+<li><strong>table-cell：</strong>指定对象作为表格单元格，类同于html标签<code>&lt;td&gt;</code></li>
+<li><strong>table-row：</strong>指定对象作为表格行，类同于html标签<code>&lt;tr&gt;</code></li>
+<li><strong>table-row-group：</strong>指定对象作为表格行组，类同于html标签<code>&lt;tbody&gt;</code></li>
+<li><strong>table-header-group：</strong>指定对象作为表格标题组，类同于html标签<code>&lt;thead&gt;</code></li>
+<li><strong>table-column：</strong>指定对象作为表格列，类同于html标签<code>&lt;col&gt;</code></li>
+<li><strong>table-column-group：</strong>指定对象作为表格列组显示，类同于html标签<code>&lt;colgroup&gt;</code></li>
+<li><strong>table-header-group：</strong>指定对象作为表格标题组，类同于html标签<code>&lt;thead&gt;</code></li>
+<li><strong>table-footer-group：</strong>指定对象作为表格脚注组，类同于html标签<code>&lt;tfoot&gt;</code></li>
+<li><strong>run-in：</strong>根据上下文决定对象是内联对象还是块级对象（CSS3）</li>
+<li><strong>box：</strong>将对象作为弹性伸缩盒显示（CSS3）</li>
+<li><strong>inline-box：</strong>将对象作为内联块级弹性伸缩盒显示（CSS3）</li>
+<li><strong>flexbox：</strong>将对象作为弹性伸缩盒显示（CSS3）</li>
+<li><strong>inline-flexbox：</strong>将对象作为内联块级弹性伸缩盒显示（CSS3）</li>
+<li><strong>flex：</strong>将对象作为弹性伸缩盒显示（CSS3）</li>
+<li><strong>inline-flex：</strong>将对象作为内联块级弹性伸缩盒显示（CSS3）</li>
+</ul>
+<h2 id="如何居中div，如何居中一个浮动元素？"><a href="#如何居中div，如何居中一个浮动元素？" class="headerlink" title="如何居中div，如何居中一个浮动元素？"></a>如何居中div，如何居中一个浮动元素？</h2><ul>
+<li>非浮动元素：设置margin：0 auto，定位，父级元素text-align: center;</li>
+<li>浮动元素<ul>
+<li>设置当前的宽度，然后设置margin-left：50%; position: relative; left: -250px;其中的left是宽度的一半</li>
+<li>父元素和子元素同时左浮动，然后父元素相对左移动50%，再然后子元素相对左移动-50%</li>
+<li>position定位</li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS中link和-import的区别是？"><a href="#CSS中link和-import的区别是？" class="headerlink" title="CSS中link和@import的区别是？"></a>CSS中link和@import的区别是？</h2><ul>
+<li>link属于html标签，而@import是CSS提供的</li>
+<li>页面被加载时，link同时加载，而@import引用的css等到页面加载完再加载</li>
+<li>@import只在IE5以上才能识别，link是html标签，无兼容问题</li>
+<li>link方式的样式权重样式@import的权重</li>
+</ul>
+<h2 id="请列举几种清除浮动的方法？"><a href="#请列举几种清除浮动的方法？" class="headerlink" title="请列举几种清除浮动的方法？"></a>请列举几种清除浮动的方法？</h2><ul>
+<li>父级div设置高度</li>
+<li>结尾处加上div标签，设置clear：both</li>
+<li>父级div定义伪类：after和zoom</li>
+<li>父级div定义overflow：hidden</li>
+</ul>
+<h2 id="block，inline和inline-block细节对比？"><a href="#block，inline和inline-block细节对比？" class="headerlink" title="block，inline和inline-block细节对比？"></a>block，inline和inline-block细节对比？</h2><ul>
+<li><p>display：block</p>
+<ul>
+<li>block元素会独占一行。默认情况下，block元素宽度自动填满其父元素宽度</li>
+<li>block元素可以设置width，height属性</li>
+</ul>
+</li>
+<li><p>display：inline</p>
+<ul>
+<li>inline元素不会独占一行，多个响铃的行内元素会排列在同一行里，直到一行排列不下</li>
+<li>inline元素的margin和padding属性，水平方向的padding和margin会产生边距效果；但竖直方向的padding和margin无效</li>
+<li>inline元素设置width，height无效</li>
+</ul>
+</li>
+<li><p>display：inline-block</p>
+<ul>
+<li>看做是排列在一行的block元素</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是优雅降级和渐进增强？"><a href="#什么是优雅降级和渐进增强？" class="headerlink" title="什么是优雅降级和渐进增强？"></a>什么是优雅降级和渐进增强？</h2><ul>
+<li><strong>优雅降级：</strong>web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会检查以确认它们是否能正常工作。由于IE独特的和模型布局问题，针对不同版本的IE的hack实践过优雅降级了，为那些无法支持功能的浏览器增加候选方案，使之在旧式浏览器上以某种形势降级体验却不至于完全失效</li>
+<li><strong>渐进增强：</strong>从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持地功能，向页面增加无害于基础浏览器地额外样式和功能的。当浏览器支持时，它们会自动呈现出来并发挥作用。</li>
+</ul>
+<h2 id="说说浮动元素会引起的问题和你的解决办法"><a href="#说说浮动元素会引起的问题和你的解决办法" class="headerlink" title="说说浮动元素会引起的问题和你的解决办法"></a>说说浮动元素会引起的问题和你的解决办法</h2><p><strong>问题：</strong></p>
+<ul>
+<li>父元素的高度无法被撑开，影响与父元素同级的元素</li>
+<li>与浮动元素同级的非浮动元素会跟随其后</li>
+<li>若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面的显示结构</li>
+</ul>
+<p><strong>解决方法：</strong></p>
+<ul>
+<li>对于问题（2）（3）使用css设置clear:both即可</li>
+<li>对于问题（1）给父元素添加.clearfix:after{content:””;display:block;height:0;clear:both;}也可以使用overflow: hidden;</li>
+</ul>
+<h2 id="你有哪些性能优化的方法？"><a href="#你有哪些性能优化的方法？" class="headerlink" title="你有哪些性能优化的方法？"></a>你有哪些性能优化的方法？</h2><ol>
+<li>减少HTTP请求次数</li>
+<li>使用CDN</li>
+<li>避免空的src和href</li>
+<li>为文件头指定Expires</li>
+<li>使用gzip压缩内容</li>
+<li>把CSS放在顶部</li>
+<li>把JS放在底部</li>
+<li>避免使用CSS表达式</li>
+<li>避免跳转</li>
+<li>可缓存的AJAX</li>
+<li>使用GET来完成AJAX请求</li>
+</ol>
+<h2 id="为什么要初始化CSS样式"><a href="#为什么要初始化CSS样式" class="headerlink" title="为什么要初始化CSS样式"></a>为什么要初始化CSS样式</h2><p>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没有对CSS初始化往往会出现浏览器之间的页面显示差异</p>
 
   
   
@@ -683,10 +779,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-18T17:02:56+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-21T20:49:13+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年8月18日</p>
+    <p>更新于：2021年8月21日</p>
   </a>
 </div>
 
@@ -810,7 +906,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8BCSS%E7%9A%84%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">解释一下CSS的盒子模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E4%BD%A0%E8%AF%B4%E8%AF%B4CSS%E9%80%89%E6%8B%A9%E5%99%A8%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%8C%E5%B9%B6%E4%B8%BE%E5%87%A0%E4%B8%AA%E4%BE%8B%E5%AD%90%E8%AF%B4%E6%98%8E%E5%85%B6%E7%94%A8%E6%B3%95%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">请你说说CSS选择器有哪些，并举几个例子说明其用法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E4%BD%A0%E8%AF%B4%E8%AF%B4CSS%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E6%AE%8A%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">请你说说CSS有什么特殊性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%94%B9%E5%8F%98%E5%B1%82%E4%B8%AD%E5%86%85%E5%AE%B9%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">动态改变层中内容可以使用的方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">常见浏览器兼容性问题与解决方案？</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8BCSS%E7%9A%84%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">解释一下CSS的盒子模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E4%BD%A0%E8%AF%B4%E8%AF%B4CSS%E9%80%89%E6%8B%A9%E5%99%A8%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%8C%E5%B9%B6%E4%B8%BE%E5%87%A0%E4%B8%AA%E4%BE%8B%E5%AD%90%E8%AF%B4%E6%98%8E%E5%85%B6%E7%94%A8%E6%B3%95%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">请你说说CSS选择器有哪些，并举几个例子说明其用法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E4%BD%A0%E8%AF%B4%E8%AF%B4CSS%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E6%AE%8A%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">请你说说CSS有什么特殊性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%94%B9%E5%8F%98%E5%B1%82%E4%B8%AD%E5%86%85%E5%AE%B9%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">动态改变层中内容可以使用的方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">常见浏览器兼容性问题与解决方案？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E5%87%BAdisplay%E7%9A%84%E5%80%BC%E5%B9%B6%E8%AF%B4%E6%98%8E%E4%BB%96%E4%BB%AC%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">列出display的值并说明他们的作用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%ADdiv%EF%BC%8C%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">如何居中div，如何居中一个浮动元素？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E4%B8%ADlink%E5%92%8C-import%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">CSS中link和@import的区别是？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E5%88%97%E4%B8%BE%E5%87%A0%E7%A7%8D%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">9.</span> <span class="toc-text">请列举几种清除浮动的方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#block%EF%BC%8Cinline%E5%92%8Cinline-block%E7%BB%86%E8%8A%82%E5%AF%B9%E6%AF%94%EF%BC%9F"><span class="toc-number">10.</span> <span class="toc-text">block，inline和inline-block细节对比？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">什么是优雅降级和渐进增强？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E8%AF%B4%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E4%BC%9A%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E4%BD%A0%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">12.</span> <span class="toc-text">说说浮动元素会引起的问题和你的解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%A0%E6%9C%89%E5%93%AA%E4%BA%9B%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">13.</span> <span class="toc-text">你有哪些性能优化的方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96CSS%E6%A0%B7%E5%BC%8F"><span class="toc-number">14.</span> <span class="toc-text">为什么要初始化CSS样式</span></a></li></ol>
     </div>
   </section>
 
