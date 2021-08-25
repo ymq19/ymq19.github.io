@@ -22,9 +22,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>CSS知识合集 - Chaos4Yarn的学习站</title>
-  
-    <meta name="keywords" content="CSS">
+  <title>前端基础知识合集 - Chaos4Yarn的学习站</title>
   
 
   
@@ -535,7 +533,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title">
-        CSS知识合集
+        前端基础知识合集
       </h1>
       <div class='new-meta-box'>
         
@@ -566,7 +564,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年8月18日</p>
+    <p>发布于：2021年8月25日</p>
   </a>
 </div>
 
@@ -577,7 +575,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="CSS知识合集" data-path="/2021/08/18/CSS%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/">
+      <div id="lc-pv" data-title="前端基础知识合集" data-path="/2021/08/25/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -595,229 +593,88 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <h2 id="解释一下CSS的盒子模型"><a href="#解释一下CSS的盒子模型" class="headerlink" title="解释一下CSS的盒子模型"></a>解释一下CSS的盒子模型</h2><ul>
-<li><strong>标准的css盒模型：</strong>width = content</li>
-<li><strong>IE盒模型：</strong>width = content + padding-left + padding-right + border-left + border-right</li>
+  <h2 id="说一下http和https"><a href="#说一下http和https" class="headerlink" title="说一下http和https"></a>说一下http和https</h2><h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ul>
+<li>http: 超文本传输协议，互联网上应用最为广泛的一种网络协议，是一个客户端服务器请求和应答的标准（TCP），用于从www服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更高效，网络传输减少。</li>
+<li>https: 是以安全为目标的HTTP通道，即HTTP加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</li>
 </ul>
-<h2 id="请你说说CSS选择器有哪些，并举几个例子说明其用法？"><a href="#请你说说CSS选择器有哪些，并举几个例子说明其用法？" class="headerlink" title="请你说说CSS选择器有哪些，并举几个例子说明其用法？"></a>请你说说CSS选择器有哪些，并举几个例子说明其用法？</h2><p><strong>类型：</strong></p>
-<ul>
-<li><strong>基础选择器：</strong>通用元素选择器*，标签选择器，class选择器，id选择器</li>
-<li><strong>组合选择器：</strong>多元素选择器（A, B），后代元素选择器（A B），子元素选择器（A&gt;B），相邻元素选择器（A + B）</li>
-<li><strong>属性选择器：</strong>具有att属性的元素（E[att]），具有att属性等于“val”的元素（E[att=val]），att属性包含单词 “val” 的所有元素（E[att~=val]），选择 att 属性值以 “en” 开头的所有元素（E[att|=val]）</li>
-<li><strong>伪类选择器：</strong>E:first-child，E:link，E:visited，E:active，E:hover，E:focus，E:lang(c)</li>
-<li><strong>伪元素选择器：</strong>E:first-line，E:first-letter，E:before，E:after</li>
+<h3 id="2-http和https的区别？"><a href="#2-http和https的区别？" class="headerlink" title="2. http和https的区别？"></a>2. http和https的区别？</h3><ul>
+<li><p>http传输的数据都是未加密的，网景公司设置了SSL协议来对http协议传输的数据进行加密处理，简单来说https协议是由http和ssl协议构建的可进行加密传输和身份认证的网络协议，比http协议的安全性更高。</p>
+</li>
+<li><p>https协议需要ca证书，费用较高</p>
+</li>
+<li><p>http是超文本传输协议，信息是明文传输，https则具有安全性的ssl加密传输协议</p>
+</li>
+<li><p>使用不同的链接方式，端口也不同，http协议的端口为80，https的端口为443</p>
+</li>
+<li><p>http连接很简单，是无状态的；https协议是由ssl+http协议构建的可进行加密传输、身份认证的网络协议，比http协议安全</p>
+</li>
 </ul>
-<h2 id="请你说说CSS有什么特殊性"><a href="#请你说说CSS有什么特殊性" class="headerlink" title="请你说说CSS有什么特殊性"></a>请你说说CSS有什么特殊性</h2><p><strong>优先级：</strong></p>
-<ul>
-<li>同类型，同级别的样式后者大于前者</li>
-<li>ID &gt; 类样式 &gt; 标签 &gt; *</li>
-<li>内联 &gt; ID选择器 &gt; 伪类 &gt; 属性选择器 &gt; 类选择器 &gt; 标签选择器 &gt; 通用选择器 &gt; 继承的样式</li>
-<li>内联样式 &gt; 内部样式 &gt; 外联样式表</li>
-<li>!important权重最高</li>
-</ul>
-<p><strong>计算特殊性值</strong>：CSS样式选择器分为4各等级: a、b、c、d</p>
-<ul>
-<li>如果样式是行内样式，a = 1, 0, 0, 0</li>
-<li>ID选择器，b = 0, 1, 0, 0</li>
-<li>属性选择器，伪类选择器，class类选择器，c = 0, 0, 1, 0</li>
-<li>标签、伪元素选择器，d = 0, 0, 0, 1</li>
-</ul>
-<h2 id="动态改变层中内容可以使用的方法？"><a href="#动态改变层中内容可以使用的方法？" class="headerlink" title="动态改变层中内容可以使用的方法？"></a>动态改变层中内容可以使用的方法？</h2><ul>
-<li>innerHTML</li>
-<li>innerText</li>
-</ul>
-<h2 id="常见浏览器兼容性问题与解决方案？"><a href="#常见浏览器兼容性问题与解决方案？" class="headerlink" title="常见浏览器兼容性问题与解决方案？"></a>常见浏览器兼容性问题与解决方案？</h2><ol>
-<li><p>不同浏览器的默认标签默认margin和padding不同</p>
-<p><strong>解决方案：CSS里 * {margin: 0; padding: 0;}</strong></p>
-</li>
-<li><p>块属性标签float后，又有横行的margin情况下，在IE6显示的margin比设置的大</p>
-<p><strong>解决方案：在float的标签样式控制中加入display: inline; 将其转化为行内属性</strong></p>
-</li>
-<li><p>设置较小高度标签（一般小于10px），在IE6，IE7中高度超出自己设置的高度</p>
-<p><strong>解决方案：给超出高度的标签设置overflow: hidden; 或者设置行高小于你设置的高度</strong></p>
-</li>
-<li><p>行内属性标签，设置 display:block 后采用 float 布局，又<br>有横行的 margin 的情况，IE6间距bug</p>
-<p><strong>解决方案：在display: block; 后面加入display: inline; display: table;</strong></p>
-</li>
-<li><p>图片默认有间距（使用问题一的解决方案无效）</p>
-<p><strong>解决方案：使用float属性为img布局</strong></p>
-</li>
-<li><p>标签最低高度设置min-height不兼容</p>
-<p><strong>解决方案：如果我们要设置一个标签的最小高度 200px，需要进行的设置为：{min-height:200px; height:auto !important; height:200px; overflow:visible;}</strong></p>
-</li>
-<li><p>透明度的兼容CSS设置</p>
-<p><strong>解决方案：ie中使用filter: alpha(opacity=0);（兼容IE8及以下的IE浏览器） firefox中使用opacity: 0; 兼容时都写上即可</strong></p>
-</li>
+<h3 id="3-https协议的工作原理"><a href="#3-https协议的工作原理" class="headerlink" title="3. https协议的工作原理"></a>3. https协议的工作原理</h3><ol>
+<li> 客户使用https url 访问服务器，则要求web服务器建立ssl链接</li>
+<li> web服务器接收到客户端的请求后，会将网站的证书，返回或者传输给客户端</li>
+<li>客户端和web服务器端开始协商ssl链接的安全等级，也就是加密等级</li>
+<li>客户端浏览器通过双方协商一致的安全等级，建立会话密钥，然后通过网站的公钥来加密会话密钥，并传输给网站</li>
+<li>web服务器端通过自己的私钥解密出会话密钥</li>
+<li>web服务器通过会话密钥加密和客户端之间的通信</li>
 </ol>
-<h2 id="列出display的值并说明他们的作用？"><a href="#列出display的值并说明他们的作用？" class="headerlink" title="列出display的值并说明他们的作用？"></a>列出display的值并说明他们的作用？</h2><ul>
-<li><strong>默认值：</strong>inline</li>
-<li><strong>none：</strong>隐藏对象。与visibility的属性hidden值不同，其不为被隐藏的对象保留物理空间</li>
-<li><strong>inline：</strong>指定对象为内联元素</li>
-<li><strong>inline-block：</strong>指定元素为内联块元素</li>
-<li><strong>block：</strong>指定元素为块元素</li>
-<li><strong>list-item：</strong>指定对象为列表项目</li>
-<li><strong>table：</strong>指定对象为块元素的表格，类同于标签<code>&lt;table&gt;</code></li>
-<li><strong>inline-table：</strong>指定对象作为内联元素级的表格，类同于html标签<code>&lt;table&gt;</code></li>
-<li><strong>table-caption：</strong>指定对象作为表格标题，类同于html标签<code>&lt;caption&gt;</code></li>
-<li><strong>table-cell：</strong>指定对象作为表格单元格，类同于html标签<code>&lt;td&gt;</code></li>
-<li><strong>table-row：</strong>指定对象作为表格行，类同于html标签<code>&lt;tr&gt;</code></li>
-<li><strong>table-row-group：</strong>指定对象作为表格行组，类同于html标签<code>&lt;tbody&gt;</code></li>
-<li><strong>table-header-group：</strong>指定对象作为表格标题组，类同于html标签<code>&lt;thead&gt;</code></li>
-<li><strong>table-column：</strong>指定对象作为表格列，类同于html标签<code>&lt;col&gt;</code></li>
-<li><strong>table-column-group：</strong>指定对象作为表格列组显示，类同于html标签<code>&lt;colgroup&gt;</code></li>
-<li><strong>table-header-group：</strong>指定对象作为表格标题组，类同于html标签<code>&lt;thead&gt;</code></li>
-<li><strong>table-footer-group：</strong>指定对象作为表格脚注组，类同于html标签<code>&lt;tfoot&gt;</code></li>
-<li><strong>run-in：</strong>根据上下文决定对象是内联对象还是块级对象（CSS3）</li>
-<li><strong>box：</strong>将对象作为弹性伸缩盒显示（CSS3）</li>
-<li><strong>inline-box：</strong>将对象作为内联块级弹性伸缩盒显示（CSS3）</li>
-<li><strong>flexbox：</strong>将对象作为弹性伸缩盒显示（CSS3）</li>
-<li><strong>inline-flexbox：</strong>将对象作为内联块级弹性伸缩盒显示（CSS3）</li>
-<li><strong>flex：</strong>将对象作为弹性伸缩盒显示（CSS3）</li>
-<li><strong>inline-flex：</strong>将对象作为内联块级弹性伸缩盒显示（CSS3）</li>
+<h3 id="4-https协议的优点"><a href="#4-https协议的优点" class="headerlink" title="4.  https协议的优点"></a>4.  https协议的优点</h3><ul>
+<li>可认证用户和服务器，确保数据发送到正确的客户机和服务器</li>
+<li>比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性</li>
+<li>现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本</li>
+<li>加密的网站在搜索结果中的排名会更高</li>
 </ul>
-<h2 id="如何居中div，如何居中一个浮动元素？"><a href="#如何居中div，如何居中一个浮动元素？" class="headerlink" title="如何居中div，如何居中一个浮动元素？"></a>如何居中div，如何居中一个浮动元素？</h2><ul>
-<li>非浮动元素：设置margin：0 auto，定位，父级元素text-align: center;</li>
-<li>浮动元素<ul>
-<li>设置当前的宽度，然后设置margin-left：50%; position: relative; left: -250px;其中的left是宽度的一半</li>
-<li>父元素和子元素同时左浮动，然后父元素相对左移动50%，再然后子元素相对左移动-50%</li>
-<li>position定位</li>
+<h3 id="5-https协议的缺点"><a href="#5-https协议的缺点" class="headerlink" title="5. https协议的缺点"></a>5. https协议的缺点</h3><ul>
+<li>握手阶段比较费时，会使页面加载时间延长50%，增加10%~20%的耗电</li>
+<li>缓存不如http高效，会增加数据开销</li>
+<li>SSL证书也需要钱，功能越强大的证书费用越高</li>
+<li>SSL证书需要绑定IP，不能在同一个IP上绑定多个域名，ipv4资源支持不了这种消耗</li>
 </ul>
-</li>
+<h2 id="tcp三次握手，一句话概括"><a href="#tcp三次握手，一句话概括" class="headerlink" title="tcp三次握手，一句话概括"></a>tcp三次握手，一句话概括</h2><p><img src="https://user-images.githubusercontent.com/17233651/42496289-1c6d668a-8458-11e8-98b3-65db50f64d48.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/17233651/42496289-1c6d668a-8458-11e8-98b3-65db50f64d48.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="tcp握手"></p>
+<p>客户端和服务端都需要直到各自可收发，因此需要三次握手</p>
+<h2 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h2><ul>
+<li>TCP 是面向连接的，udp 是无连接的即发送数据前不需要先建立连接</li>
+<li>TCP 提供可靠的服务。也就是说，通过 TCP 连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP 尽最大努力交付，即不保证可靠交付。 并且因为 tcp 可靠，面向连接，不会丢失数据因此适合大数据量的交换</li>
+<li>TCP 是面向字节流，UDP 面向报文，并且网络出现拥塞不会使得发送速率降低</li>
+<li>TCP 只能是 1 对 1 的，UDP 支持 1 对 1,1 对多</li>
+<li>TCP 的首部较大为 20 字节，而 UDP 只有 8 字节</li>
 </ul>
-<h2 id="CSS中link和-import的区别是？"><a href="#CSS中link和-import的区别是？" class="headerlink" title="CSS中link和@import的区别是？"></a>CSS中link和@import的区别是？</h2><ul>
-<li>link属于html标签，而@import是CSS提供的</li>
-<li>页面被加载时，link同时加载，而@import引用的css等到页面加载完再加载</li>
-<li>@import只在IE5以上才能识别，link是html标签，无兼容问题</li>
-<li>link方式的样式权重样式@import的权重</li>
-</ul>
-<h2 id="请列举几种清除浮动的方法？"><a href="#请列举几种清除浮动的方法？" class="headerlink" title="请列举几种清除浮动的方法？"></a>请列举几种清除浮动的方法？</h2><ul>
-<li>父级div设置高度</li>
-<li>结尾处加上div标签，设置clear：both</li>
-<li>父级div定义伪类：after和zoom</li>
-<li>父级div定义overflow：hidden</li>
-</ul>
-<h2 id="block，inline和inline-block细节对比？"><a href="#block，inline和inline-block细节对比？" class="headerlink" title="block，inline和inline-block细节对比？"></a>block，inline和inline-block细节对比？</h2><ul>
-<li><p>display：block</p>
-<ul>
-<li>block元素会独占一行。默认情况下，block元素宽度自动填满其父元素宽度</li>
-<li>block元素可以设置width，height属性</li>
-</ul>
-</li>
-<li><p>display：inline</p>
-<ul>
-<li>inline元素不会独占一行，多个响铃的行内元素会排列在同一行里，直到一行排列不下</li>
-<li>inline元素的margin和padding属性，水平方向的padding和margin会产生边距效果；但竖直方向的padding和margin无效</li>
-<li>inline元素设置width，height无效</li>
-</ul>
-</li>
-<li><p>display：inline-block</p>
-<ul>
-<li>看做是排列在一行的block元素</li>
-</ul>
-</li>
-</ul>
-<h2 id="什么是优雅降级和渐进增强？"><a href="#什么是优雅降级和渐进增强？" class="headerlink" title="什么是优雅降级和渐进增强？"></a>什么是优雅降级和渐进增强？</h2><ul>
-<li><strong>优雅降级：</strong>web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会检查以确认它们是否能正常工作。由于IE独特的和模型布局问题，针对不同版本的IE的hack实践过优雅降级了，为那些无法支持功能的浏览器增加候选方案，使之在旧式浏览器上以某种形势降级体验却不至于完全失效</li>
-<li><strong>渐进增强：</strong>从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持地功能，向页面增加无害于基础浏览器地额外样式和功能的。当浏览器支持时，它们会自动呈现出来并发挥作用。</li>
-</ul>
-<h2 id="说说浮动元素会引起的问题和你的解决办法"><a href="#说说浮动元素会引起的问题和你的解决办法" class="headerlink" title="说说浮动元素会引起的问题和你的解决办法"></a>说说浮动元素会引起的问题和你的解决办法</h2><p><strong>问题：</strong></p>
-<ul>
-<li>父元素的高度无法被撑开，影响与父元素同级的元素</li>
-<li>与浮动元素同级的非浮动元素会跟随其后</li>
-<li>若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面的显示结构</li>
-</ul>
-<p><strong>解决方法：</strong></p>
-<ul>
-<li>对于问题（2）（3）使用css设置clear:both即可</li>
-<li>对于问题（1）给父元素添加.clearfix:after{content:””;display:block;height:0;clear:both;}也可以使用overflow: hidden;</li>
-</ul>
-<h2 id="你有哪些性能优化的方法？"><a href="#你有哪些性能优化的方法？" class="headerlink" title="你有哪些性能优化的方法？"></a>你有哪些性能优化的方法？</h2><ol>
-<li>减少HTTP请求次数</li>
-<li>使用CDN</li>
-<li>避免空的src和href</li>
-<li>为文件头指定Expires</li>
-<li>使用gzip压缩内容</li>
-<li>把CSS放在顶部</li>
-<li>把JS放在底部</li>
-<li>避免使用CSS表达式</li>
-<li>避免跳转</li>
-<li>可缓存的AJAX</li>
-<li>使用GET来完成AJAX请求</li>
+<h2 id="HTTP请求的方式，HEAD方式"><a href="#HTTP请求的方式，HEAD方式" class="headerlink" title="HTTP请求的方式，HEAD方式"></a>HTTP请求的方式，HEAD方式</h2><p>head：类似于get请求，只不过返回的响应中没有具体的内容，用户获取报头options，允许客户端查看服务器的性能，比如说服务器支持的请求方式等等</p>
+<h2 id="一个图片url访问后直接下载怎样实现？"><a href="#一个图片url访问后直接下载怎样实现？" class="headerlink" title="一个图片url访问后直接下载怎样实现？"></a>一个图片url访问后直接下载怎样实现？</h2><p>请求的返回头里面，用于浏览器解析的重要参数就是 OSS 的 API 文档里面的返回 http 头，决定用户下载行为的参数。</p>
+<p>下载的情况下：</p>
+<ol>
+<li>x-oss-object-type: Normal</li>
+<li>x-oss-request-id: 598D5ED34F29D01FE2925F41</li>
+<li>x-oss-storage-class: Standard</li>
 </ol>
-<h2 id="为什么要初始化CSS样式"><a href="#为什么要初始化CSS样式" class="headerlink" title="为什么要初始化CSS样式"></a>为什么要初始化CSS样式</h2><p>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没有对CSS初始化往往会出现浏览器之间的页面显示差异</p>
-<h2 id="解释下浮动和它的工作原理？"><a href="#解释下浮动和它的工作原理？" class="headerlink" title="解释下浮动和它的工作原理？"></a>解释下浮动和它的工作原理？</h2><p>浮动元素脱离文档流，不占据空间。浮动元素碰到包含它的边框或者浮动元素的边框停留</p>
-<h2 id="CSS样式表根据所在网页的位置，可分为哪几种样式表？"><a href="#CSS样式表根据所在网页的位置，可分为哪几种样式表？" class="headerlink" title="CSS样式表根据所在网页的位置，可分为哪几种样式表？"></a>CSS样式表根据所在网页的位置，可分为哪几种样式表？</h2><ul>
-<li>行内样式表</li>
-<li>内嵌样式表</li>
-<li>外部样式表</li>
-</ul>
-<h2 id="谈谈你对CSS中刻度的认识？"><a href="#谈谈你对CSS中刻度的认识？" class="headerlink" title="谈谈你对CSS中刻度的认识？"></a>谈谈你对CSS中刻度的认识？</h2><p>在CSS中刻度是用于设置元素尺寸的单位</p>
+<h2 id="说一下-web-Quality-（无障碍）"><a href="#说一下-web-Quality-（无障碍）" class="headerlink" title="说一下 web Quality （无障碍）"></a>说一下 web Quality （无障碍）</h2><p>能够被残障人士使用的网站才能称得上一个易用（易访问的）的网站</p>
+<h2 id="几个很实用的BOM属性对象方法？"><a href="#几个很实用的BOM属性对象方法？" class="headerlink" title="几个很实用的BOM属性对象方法？"></a>几个很实用的BOM属性对象方法？</h2><ul>
+<li><p>location对象</p>
 <ul>
-<li>特殊值0可以省略单位。例如：margin: 0px 可以写成margin: 0</li>
-<li>一些属性可能允许有负长度值，或者有一定的范围限制。如果不支持长度值，那应该变换到能够被支持的最近的一个长度值</li>
-<li>相对长度单位：em，ex，ch，rem，vw，vh，vmax，vmin</li>
-<li>绝对长度单位：cm，mm，q，in，pt，pc，px</li>
-<li>文本相对长度单位：em，rem（CSS新增的，相对于根元素font-size计算值的倍数）</li>
+<li>location.href: 返回或设置当前文档的URL</li>
+<li>location.search: 返回URL中的查询字符串内容</li>
+<li>location.hash: 返回URL#后面的内容，如果没有#，返回空</li>
+<li>location.host: 返回URL中的域名部分</li>
+<li>location.hostname: 返回URL的主域名部分</li>
+<li>location.pathname: 返回URL的域名后的部分</li>
+<li>location.port: 返回URL中的端口部分</li>
+<li>location.protocol: 返回URL中的协议部分</li>
+<li>location.assign: 返回当前文档的URL</li>
+<li>location.replace(): 设置当前文档的URL，并且在history对象的地址列表中移除</li>
+<li>location.reload(): 重载当前页面</li>
 </ul>
-<h2 id="请你说说em和rem的区别？"><a href="#请你说说em和rem的区别？" class="headerlink" title="请你说说em和rem的区别？"></a>请你说说em和rem的区别？</h2><p>区别在于em计算的规则依赖于父元素，rem计算的规则依赖根元素</p>
+</li>
+<li><p>history对象</p>
 <ul>
-<li>rem：CSS3新增的一个相对单位，相对于根元素font-szie计算值的倍数</li>
-<li>em：文本相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被认为设置，则相对于浏览器的默认字体尺寸。</li>
-</ul>
-<h2 id="请你说说box-sizing属性的用法？"><a href="#请你说说box-sizing属性的用法？" class="headerlink" title="请你说说box-sizing属性的用法？"></a>请你说说box-sizing属性的用法？</h2><ul>
-<li><strong>box-sizing: content-box</strong>   padding和border不被包含在定义的width和height内。对象的实际高度等于设置的width和border、padding之和，width = width + border + padding，此属性表现为标准模式下的盒模型</li>
-<li><strong>box-sizing: border-box</strong>  padding和border被包含在定义的width和height之内。对象的实际宽度等于设置的width值，即使定义有border和padding也不会高边对象的实际宽度，即此属性表现为怪异模式下的盒模型。</li>
-</ul>
-<h2 id="说说你对边距折叠的理解？"><a href="#说说你对边距折叠的理解？" class="headerlink" title="说说你对边距折叠的理解？"></a>说说你对边距折叠的理解？</h2><ul>
-<li><strong>外边距折叠：</strong>相邻的两个或多个外边距在垂直方向会合并成一个外边距</li>
-<li><strong>垂直方向外边距合并计算</strong><ul>
-<li>参加的折叠 margin 都是正值：取其中 margin 较大的值为最终 margin 值</li>
-<li>参与折叠的 margin 都是负值：取的是其中绝对值较大的，然后从0开始，负向位移</li>
-<li>参与折叠的 margin 中有正值和负值：先取出负 margin 中绝对值最大的，然后和正margin值中最大的 margin 相加</li>
+<li>history.go(): 前进或后退的页面数</li>
+<li>history.back(): 后退一页</li>
+<li>history.forward(): 前进一页</li>
 </ul>
 </li>
-</ul>
-<h2 id="说说隐藏元素的方式有哪些？"><a href="#说说隐藏元素的方式有哪些？" class="headerlink" title="说说隐藏元素的方式有哪些？"></a>说说隐藏元素的方式有哪些？</h2><ul>
-<li>使用CSS的 display: none; 不会占用原来的位置</li>
-<li>使用CSS的 visibility: hidden; 会占用原来的位置</li>
-<li>使用HTML5中的新增属性 hidden: “hidden”，不会占用原来的位置</li>
-</ul>
-<h2 id="谈谈你对BFC和IFC的理解？"><a href="#谈谈你对BFC和IFC的理解？" class="headerlink" title="谈谈你对BFC和IFC的理解？"></a>谈谈你对BFC和IFC的理解？</h2><h3 id="1-什么是BFC和IFC"><a href="#1-什么是BFC和IFC" class="headerlink" title="1. 什么是BFC和IFC"></a>1. 什么是BFC和IFC</h3><ul>
-<li>BFC即“块级格式化上下文”，IFC即行内格式化上下文。可以把BFC想象成一个大箱子，箱子外边的元素将不与箱子内的元素产生作用</li>
-<li>BFC决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。浮动元素会形成BFC，浮动元素内部子元素主要受浮动元素影响，两个浮动元素之间是互不影响的。也可以说BFC是一个作用范围。</li>
-</ul>
-<h3 id="2-如何产生BFC"><a href="#2-如何产生BFC" class="headerlink" title="2. 如何产生BFC"></a>2. 如何产生BFC</h3><ul>
-<li>float值不为none</li>
-<li>overflow的值不为visible</li>
-<li>display的值为table-cell，table-caption，inline-box中其中一个</li>
-<li>position的值不为relative和static</li>
-</ul>
-<h3 id="3-BFC的作用与特点"><a href="#3-BFC的作用与特点" class="headerlink" title="3. BFC的作用与特点"></a>3. BFC的作用与特点</h3><p>不和浮动元素重叠，清除外部浮动，阻止浮动元素覆盖。</p>
-<p>如果一个浮动元素后面跟着一个非浮动的元素，那么就会产生一个重叠的现象。</p>
-<h2 id="如何解决多个元素重叠问题"><a href="#如何解决多个元素重叠问题" class="headerlink" title="如何解决多个元素重叠问题"></a>如何解决多个元素重叠问题</h2><p>使用z-index属性可以设置元素的层叠顺序</p>
-<h2 id="页面布局的方法有哪些？"><a href="#页面布局的方法有哪些？" class="headerlink" title="页面布局的方法有哪些？"></a>页面布局的方法有哪些？</h2><ul>
-<li><p>双飞翼（圣杯）布局</p>
+<li><p>Navigator对象</p>
 <ul>
-<li>三列布局，中间宽度自适应，两边定宽</li>
-<li>中间栏要在浏览器中优先展示渲染</li>
-<li>允许只用一个额外的DIV标签</li>
-<li>要求用最简单的CSS，最少的HACK语句</li>
+<li>navigator.userAgent: 返回用户代理头的字符串表示</li>
+<li>navigator.cookieEnabled: 返回浏览器是否支持（启用）cookie</li>
 </ul>
-</li>
-<li><p>多栏布局</p>
-<ul>
-<li>栏栅格布局</li>
-<li>多列布局</li>
-</ul>
-</li>
-<li><p>弹性布局</p>
-<p>flexbox布局</p>
-</li>
-<li><p>流式布局（Fluid）</p>
-</li>
-<li><p>瀑布流布局</p>
-</li>
-<li><p>响应式布局</p>
 </li>
 </ul>
 
@@ -837,7 +694,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=https://ymq19.github.io/2021/08/18/CSS%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/>https://ymq19.github.io/2021/08/18/CSS%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/</a></p>
+                <p>本文永久链接是：<a href=https://ymq19.github.io/2021/08/25/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/>https://ymq19.github.io/2021/08/25/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/</a></p>
               
             
           </blockquote>
@@ -854,10 +711,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-24T16:09:17+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-25T15:46:48+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年8月24日</p>
+    <p>更新于：2021年8月25日</p>
   </a>
 </div>
 
@@ -865,9 +722,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CSS/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CSS</p></a></div>
-
 
         
       
@@ -879,7 +733,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ymq19.github.io/2021/08/18/CSS%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/&title=CSS知识合集 - Chaos4Yarn的学习站&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ymq19.github.io/2021/08/25/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/&title=前端基础知识合集 - Chaos4Yarn的学习站&summary="
           
           >
           
@@ -891,7 +745,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ymq19.github.io/2021/08/18/CSS%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/&title=CSS知识合集 - Chaos4Yarn的学习站&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ymq19.github.io/2021/08/25/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/&title=前端基础知识合集 - Chaos4Yarn的学习站&summary="
           
           >
           
@@ -903,7 +757,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ymq19.github.io/2021/08/18/CSS%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/&title=CSS知识合集 - Chaos4Yarn的学习站&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ymq19.github.io/2021/08/25/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/&title=前端基础知识合集 - Chaos4Yarn的学习站&summary="
           
           >
           
@@ -933,18 +787,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/08/25/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>前端基础知识合集</p>
-          <p class='content'>说一下http和https1. 基本概念
-http: 超文本传输协议，互联网上应用最为广泛的一种网络协议，是一个客户端服务器请求和应答的标准（TCP），用于从www服务器传输超文本到本地浏览器的...</p>
-        </a>
       
-      
-        <a class='next' href='/2021/08/15/HTML%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/'>
-          <p class='title'>HTML知识合集<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>浏览器页面由哪三层构成，分别是什么，作用是什么构成： 结构层、表示层、行为层
-分别是：HTML、CSS、JavaScript
-作用： HTML实现页面结构、CSS完成页面的表现与风格、JavaS...</p>
+        <a class='next' href='/2021/08/18/CSS%E7%9F%A5%E8%AF%86%E5%90%88%E9%9B%86/'>
+          <p class='title'>CSS知识合集<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>解释一下CSS的盒子模型
+标准的css盒模型：width = content
+IE盒模型：width = content + padding-left + padding-right + bor...</p>
         </a>
       
     </div>
@@ -987,7 +835,7 @@ http: 超文本传输协议，互联网上应用最为广泛的一种网络协�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8BCSS%E7%9A%84%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">解释一下CSS的盒子模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E4%BD%A0%E8%AF%B4%E8%AF%B4CSS%E9%80%89%E6%8B%A9%E5%99%A8%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%8C%E5%B9%B6%E4%B8%BE%E5%87%A0%E4%B8%AA%E4%BE%8B%E5%AD%90%E8%AF%B4%E6%98%8E%E5%85%B6%E7%94%A8%E6%B3%95%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">请你说说CSS选择器有哪些，并举几个例子说明其用法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E4%BD%A0%E8%AF%B4%E8%AF%B4CSS%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E6%AE%8A%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">请你说说CSS有什么特殊性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%94%B9%E5%8F%98%E5%B1%82%E4%B8%AD%E5%86%85%E5%AE%B9%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">动态改变层中内容可以使用的方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">常见浏览器兼容性问题与解决方案？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E5%87%BAdisplay%E7%9A%84%E5%80%BC%E5%B9%B6%E8%AF%B4%E6%98%8E%E4%BB%96%E4%BB%AC%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">列出display的值并说明他们的作用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%ADdiv%EF%BC%8C%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">如何居中div，如何居中一个浮动元素？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E4%B8%ADlink%E5%92%8C-import%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">CSS中link和@import的区别是？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E5%88%97%E4%B8%BE%E5%87%A0%E7%A7%8D%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">9.</span> <span class="toc-text">请列举几种清除浮动的方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#block%EF%BC%8Cinline%E5%92%8Cinline-block%E7%BB%86%E8%8A%82%E5%AF%B9%E6%AF%94%EF%BC%9F"><span class="toc-number">10.</span> <span class="toc-text">block，inline和inline-block细节对比？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">什么是优雅降级和渐进增强？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E8%AF%B4%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E4%BC%9A%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E4%BD%A0%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">12.</span> <span class="toc-text">说说浮动元素会引起的问题和你的解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%A0%E6%9C%89%E5%93%AA%E4%BA%9B%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">13.</span> <span class="toc-text">你有哪些性能优化的方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96CSS%E6%A0%B7%E5%BC%8F"><span class="toc-number">14.</span> <span class="toc-text">为什么要初始化CSS样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%8B%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%83%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="toc-number">15.</span> <span class="toc-text">解释下浮动和它的工作原理？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E6%A0%B7%E5%BC%8F%E8%A1%A8%E6%A0%B9%E6%8D%AE%E6%89%80%E5%9C%A8%E7%BD%91%E9%A1%B5%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%8C%E5%8F%AF%E5%88%86%E4%B8%BA%E5%93%AA%E5%87%A0%E7%A7%8D%E6%A0%B7%E5%BC%8F%E8%A1%A8%EF%BC%9F"><span class="toc-number">16.</span> <span class="toc-text">CSS样式表根据所在网页的位置，可分为哪几种样式表？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%88%E8%B0%88%E4%BD%A0%E5%AF%B9CSS%E4%B8%AD%E5%88%BB%E5%BA%A6%E7%9A%84%E8%AE%A4%E8%AF%86%EF%BC%9F"><span class="toc-number">17.</span> <span class="toc-text">谈谈你对CSS中刻度的认识？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E4%BD%A0%E8%AF%B4%E8%AF%B4em%E5%92%8Crem%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">18.</span> <span class="toc-text">请你说说em和rem的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E4%BD%A0%E8%AF%B4%E8%AF%B4box-sizing%E5%B1%9E%E6%80%A7%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%9F"><span class="toc-number">19.</span> <span class="toc-text">请你说说box-sizing属性的用法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E8%AF%B4%E4%BD%A0%E5%AF%B9%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%9F"><span class="toc-number">20.</span> <span class="toc-text">说说你对边距折叠的理解？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E8%AF%B4%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">21.</span> <span class="toc-text">说说隐藏元素的方式有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%88%E8%B0%88%E4%BD%A0%E5%AF%B9BFC%E5%92%8CIFC%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%9F"><span class="toc-number">22.</span> <span class="toc-text">谈谈你对BFC和IFC的理解？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFBFC%E5%92%8CIFC"><span class="toc-number">22.1.</span> <span class="toc-text">1. 什么是BFC和IFC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9FBFC"><span class="toc-number">22.2.</span> <span class="toc-text">2. 如何产生BFC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-BFC%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%89%B9%E7%82%B9"><span class="toc-number">22.3.</span> <span class="toc-text">3. BFC的作用与特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%A4%9A%E4%B8%AA%E5%85%83%E7%B4%A0%E9%87%8D%E5%8F%A0%E9%97%AE%E9%A2%98"><span class="toc-number">23.</span> <span class="toc-text">如何解决多个元素重叠问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">24.</span> <span class="toc-text">页面布局的方法有哪些？</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8Bhttp%E5%92%8Chttps"><span class="toc-number">1.</span> <span class="toc-text">说一下http和https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1. 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-http%E5%92%8Chttps%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">2. http和https的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-https%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">3. https协议的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-https%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">1.4.</span> <span class="toc-text">4.  https协议的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-https%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">1.5.</span> <span class="toc-text">5. https协议的缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%A6%82%E6%8B%AC"><span class="toc-number">2.</span> <span class="toc-text">tcp三次握手，一句话概括</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">TCP和UDP的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E8%AF%B7%E6%B1%82%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8CHEAD%E6%96%B9%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">HTTP请求的方式，HEAD方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%9B%BE%E7%89%87url%E8%AE%BF%E9%97%AE%E5%90%8E%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E6%80%8E%E6%A0%B7%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">一个图片url访问后直接下载怎样实现？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8B-web-Quality-%EF%BC%88%E6%97%A0%E9%9A%9C%E7%A2%8D%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">说一下 web Quality （无障碍）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E5%BE%88%E5%AE%9E%E7%94%A8%E7%9A%84BOM%E5%B1%9E%E6%80%A7%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">几个很实用的BOM属性对象方法？</span></a></li></ol>
     </div>
   </section>
 
@@ -1006,7 +854,7 @@ http: 超文本传输协议，互联网上应用最为广泛的一种网络协�
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="CSS知识合集";
+  pdata.postTitle="前端基础知识合集";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
