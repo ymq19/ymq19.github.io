@@ -677,6 +677,82 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 </li>
 </ul>
+<h2 id="说一下HTML5-drag-api"><a href="#说一下HTML5-drag-api" class="headerlink" title="说一下HTML5 drag api"></a>说一下HTML5 drag api</h2><ul>
+<li>dragstart: 事件主体是被拖放元素，在开始拖放被拖放元素时触发。</li>
+<li>drag: 事件主体是被拖放元素，在正在拖放被触发元素时触发</li>
+<li>dragenter: 事件主体是目标元素，在被拖放元素进入某元素时触发</li>
+<li>dragover: 事件主体是目标元素，在被拖放在某元素内移动时触发</li>
+<li>dragleave: 事件主体是目标元素，在被拖放元素移出目标元素时出触发</li>
+<li>drop: 事件主体是目标元素，在目标元素完全接收被拖放元素时触发</li>
+<li>dragend: 事件主体是被拖放元素，在整个拖放操作结束时触发</li>
+</ul>
+<h2 id="说一下http2-0"><a href="#说一下http2-0" class="headerlink" title="说一下http2.0"></a>说一下http2.0</h2><p>http2.0是基于1999年发布的http1.0之后的首次更新</p>
+<ul>
+<li>提升访问速度，相比http1.0，请求资源所需时间更少，访问速度更快</li>
+<li>允许多路复用: 多路复用允许同时通过单一的HTTP/2连接发送多重请求-响应信息</li>
+<li>二进制分帧：HTTP2.0会将所有的传输信息分割为更小的信息或者帧，并对他们进行二进制编码</li>
+<li>首部压缩</li>
+<li>服务器端推送</li>
+</ul>
+<h2 id="补充400和401、403状态码"><a href="#补充400和401、403状态码" class="headerlink" title="补充400和401、403状态码"></a>补充400和401、403状态码</h2><ul>
+<li>400: 请求无效，前端提交的字段名称和字段类型与后台的实体并没有保持一致</li>
+<li>401状态码：当前请求需要用户验证</li>
+<li>403状态码：服务器已经得到请求，但是拒绝执行</li>
+</ul>
+<h2 id="fetch-发送2次请求的原因"><a href="#fetch-发送2次请求的原因" class="headerlink" title="fetch 发送2次请求的原因"></a>fetch 发送2次请求的原因</h2><p>fetch 发送 post 请求的时候，总是发送 2 次，第一次状态码为 204， 第二才成功？</p>
+<p>因为用 fetch 的 post 请求的时候，导致 fetch 第一次发送了一个 OPTIONS 请求，询问服务器是否支持 修改 的请求头，如果服务器支持，则在第二次中发送真正的请求</p>
+<h2 id="说一下-web-worker"><a href="#说一下-web-worker" class="headerlink" title="说一下 web worker"></a>说一下 web worker</h2><p>web worker 是运行在后台的js，独立于其他脚本，不会影响你的性能。并且通过 postMessage 将结果回传到主线程。这样在进行复杂的操作的时候，就不会阻塞主线程了</p>
+<p>创建 web worker：</p>
+<ul>
+<li>检测浏览器对于 web worker 的支持性</li>
+<li>创建 web worker 文件</li>
+<li>创建 web worker 对象</li>
+</ul>
+<h2 id="Cookie-如何预防-XSS-攻击"><a href="#Cookie-如何预防-XSS-攻击" class="headerlink" title="Cookie 如何预防 XSS 攻击"></a>Cookie 如何预防 XSS 攻击</h2><p>XSS （跨站脚本攻击）是指攻击者在返回的 HTML 中嵌入 javascript 脚本，为了减轻这些攻击，需要在 HTTP 头部配上 set-cookie: httponly- 这属性可以防止XSS，它会禁止 javascript 脚本来访问 cookie</p>
+<h2 id="一句话概括RESTFUL"><a href="#一句话概括RESTFUL" class="headerlink" title="一句话概括RESTFUL"></a>一句话概括RESTFUL</h2><p>用 URL 定位资源，用 HTTP 描述操作</p>
+<h2 id="addEventListener-参数"><a href="#addEventListener-参数" class="headerlink" title="addEventListener 参数"></a>addEventListener 参数</h2><p>addEventListener(event, function, useCapture)</p>
+<p>其中，event指定事件名；function 指定要事件触发时执行的函数；useCapture 指定事件是否在捕获或冒泡阶段执行</p>
+<h2 id="介绍知道的-http-返回的状态码"><a href="#介绍知道的-http-返回的状态码" class="headerlink" title="介绍知道的 http 返回的状态码"></a>介绍知道的 http 返回的状态码</h2><p><strong>100</strong> Continue 继续。客户端应继续其请求</p>
+<p><strong>101</strong> Switching Protocols 切换协议。服务器根据客户端的请求切换协议。只能切换到更高级的协议，例如，切换到 HTTP 的新版本协议。</p>
+<p><strong>200</strong> OK 请求成功。一般用于 GET 与 POST 请求</p>
+<p><strong>201</strong> Created 成功请求并创建了新的资源</p>
+<p><strong>202</strong> Accepted 已经接收请求，但未处理而完成</p>
+<p><strong>203</strong> Non-Authoritative Information 非授权请求</p>
+<p><strong>204</strong> No Content 服务器成功处理，但未返回内容</p>
+<p><strong>205</strong> Reset Content 重置内容</p>
+<p><strong>206</strong> Partial Content 服务器成功处理了部分 GET 请求</p>
+<p><strong>300</strong> Multiple Choices 请求的资源可包括多个位置，响应可返回一个资源特征与地址的列表用于用户终端</p>
+<p><strong>301</strong> Moved Permanently 永久移动，今后任何新的请求都应使用新的URI代替</p>
+<p><strong>302</strong> Found 临时移动，客户端应继续使用原有 URI</p>
+<p><strong>303</strong> See Other 查看其他地址</p>
+<p><strong>304</strong> Not Modified 所请求的资源未修改，服务器返回此状态码时，不会返回任何资源</p>
+<p><strong>305</strong> Use Proxy 使用代理</p>
+<p><strong>306</strong> Unused 已经被废弃的 HTTP 状态码</p>
+<p><strong>307</strong> Temporary Redirect 临时重定向</p>
+<p><strong>400</strong> 客户端请求的语法错误，服务器无法理解</p>
+<p><strong>401</strong> Unauthorized 请求要求的用户身份认证</p>
+<p><strong>402</strong> Payment Required 保留，将来使用</p>
+<p><strong>403</strong> Forbidden 服务器理解请求客户端的请求，但是拒绝执行此请求</p>
+<p><strong>404</strong> Not Found 服务器无法根据客户端的请求找到资源</p>
+<p><strong>405</strong> Method Not Allowed 客户端的请求方法被禁止</p>
+<p><strong>406</strong> Not Accepted 服务器无法根据客户端请求的内容特性完成请求</p>
+<p><strong>407</strong> Proxy Authentication Required 请求要求代理的身份认证</p>
+<p><strong>408</strong> Request Time-out 服务器等待客户端发送的请求时间过长，超时</p>
+<p><strong>409</strong> Conflict 服务器完成客户端的 PUT 请求是可能返回此代码，服务器处理请求时发生了冲突</p>
+<p><strong>410</strong> Gone 客户端的请求资源已经不存在</p>
+<p><strong>411</strong> Length Required 服务器无法处理客户端发送的不带 Content-Length 的请求信息</p>
+<p><strong>412</strong> Precondition Failed 客户端请求信息的先决条件错误</p>
+<p><strong>413</strong> Request Entity Too Large请求的实体过大，服务器无法处理，因此拒绝请求</p>
+<p><strong>414</strong> Request-URI Too Large 请求的 URI 过长，服务器无法处理</p>
+<p><strong>415</strong> Unsupported Media Type 服务器无法处理请求附带的媒体格式</p>
+<p><strong>416</strong> Requested range not satisfiable 客户端请求的范围无效</p>
+<p><strong>417</strong> Expectation Failed 服务器无法满足 Expect 的请求头信息</p>
+<p><strong>500</strong> Internal Server Error 服务器内部错误，无法完成请求</p>
+<p><strong>501</strong> Not Implemented 服务器不支持请求的功能，无法完成请求</p>
+<p><strong>502</strong> Bad Gateway 作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</p>
+<p><strong>503</strong> Service Unavailable 由于超载或系统维护，服务器暂时的无法处理客户端的请求</p>
+<p><strong>504</strong> Gateway Time-out 充当网关或代理的服务器，未及时从远端服务器获取请求</p>
+<p><strong>505</strong> HTTP Version not supported 服务器不支持请求的 HTTP 协议的版本，无法完成处理 </p>
 
   
   
@@ -711,10 +787,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-25T15:46:48+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-26T16:01:46+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年8月25日</p>
+    <p>更新于：2021年8月26日</p>
   </a>
 </div>
 
@@ -835,7 +911,7 @@ IE盒模型：width = content + padding-left + padding-right + bor...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8Bhttp%E5%92%8Chttps"><span class="toc-number">1.</span> <span class="toc-text">说一下http和https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1. 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-http%E5%92%8Chttps%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">2. http和https的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-https%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">3. https协议的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-https%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">1.4.</span> <span class="toc-text">4.  https协议的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-https%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">1.5.</span> <span class="toc-text">5. https协议的缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%A6%82%E6%8B%AC"><span class="toc-number">2.</span> <span class="toc-text">tcp三次握手，一句话概括</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">TCP和UDP的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E8%AF%B7%E6%B1%82%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8CHEAD%E6%96%B9%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">HTTP请求的方式，HEAD方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%9B%BE%E7%89%87url%E8%AE%BF%E9%97%AE%E5%90%8E%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E6%80%8E%E6%A0%B7%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">一个图片url访问后直接下载怎样实现？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8B-web-Quality-%EF%BC%88%E6%97%A0%E9%9A%9C%E7%A2%8D%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">说一下 web Quality （无障碍）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E5%BE%88%E5%AE%9E%E7%94%A8%E7%9A%84BOM%E5%B1%9E%E6%80%A7%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">几个很实用的BOM属性对象方法？</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8Bhttp%E5%92%8Chttps"><span class="toc-number">1.</span> <span class="toc-text">说一下http和https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1. 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-http%E5%92%8Chttps%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">2. http和https的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-https%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">3. https协议的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-https%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">1.4.</span> <span class="toc-text">4.  https协议的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-https%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">1.5.</span> <span class="toc-text">5. https协议的缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%A6%82%E6%8B%AC"><span class="toc-number">2.</span> <span class="toc-text">tcp三次握手，一句话概括</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">TCP和UDP的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E8%AF%B7%E6%B1%82%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8CHEAD%E6%96%B9%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">HTTP请求的方式，HEAD方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%9B%BE%E7%89%87url%E8%AE%BF%E9%97%AE%E5%90%8E%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E6%80%8E%E6%A0%B7%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">一个图片url访问后直接下载怎样实现？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8B-web-Quality-%EF%BC%88%E6%97%A0%E9%9A%9C%E7%A2%8D%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">说一下 web Quality （无障碍）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E5%BE%88%E5%AE%9E%E7%94%A8%E7%9A%84BOM%E5%B1%9E%E6%80%A7%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">几个很实用的BOM属性对象方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8BHTML5-drag-api"><span class="toc-number">8.</span> <span class="toc-text">说一下HTML5 drag api</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8Bhttp2-0"><span class="toc-number">9.</span> <span class="toc-text">说一下http2.0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85400%E5%92%8C401%E3%80%81403%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">10.</span> <span class="toc-text">补充400和401、403状态码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fetch-%E5%8F%91%E9%80%812%E6%AC%A1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-number">11.</span> <span class="toc-text">fetch 发送2次请求的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8B-web-worker"><span class="toc-number">12.</span> <span class="toc-text">说一下 web worker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie-%E5%A6%82%E4%BD%95%E9%A2%84%E9%98%B2-XSS-%E6%94%BB%E5%87%BB"><span class="toc-number">13.</span> <span class="toc-text">Cookie 如何预防 XSS 攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%A6%82%E6%8B%ACRESTFUL"><span class="toc-number">14.</span> <span class="toc-text">一句话概括RESTFUL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#addEventListener-%E5%8F%82%E6%95%B0"><span class="toc-number">15.</span> <span class="toc-text">addEventListener 参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E7%9F%A5%E9%81%93%E7%9A%84-http-%E8%BF%94%E5%9B%9E%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">16.</span> <span class="toc-text">介绍知道的 http 返回的状态码</span></a></li></ol>
     </div>
   </section>
 
