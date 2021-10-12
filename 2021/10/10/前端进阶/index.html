@@ -624,6 +624,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h2 id="promise-的状态有哪些"><a href="#promise-的状态有哪些" class="headerlink" title="promise 的状态有哪些"></a>promise 的状态有哪些</h2><p>等待（pending）、已完成（fulfilled）、已拒绝（rejected）</p>
 <h2 id="数据移除第一个元素的方法有哪些"><a href="#数据移除第一个元素的方法有哪些" class="headerlink" title="数据移除第一个元素的方法有哪些"></a>数据移除第一个元素的方法有哪些</h2><p>splice、shift</p>
 <h2 id="vue-中使用-keep-alive-的作用"><a href="#vue-中使用-keep-alive-的作用" class="headerlink" title="vue 中使用 keep-alive 的作用"></a>vue 中使用 keep-alive 的作用</h2><p>使被包含的组件保留状态或避免重新渲染</p>
+<p>特性：</p>
+<ul>
+<li>一般结合路由和动态组件一起使用，用于缓存组件</li>
+<li>提供 include 和 exclude 属性，两者都支持字符串或正则表达式，include 表示只在名称匹配的组件会被缓存，exclude 表示任何名称匹配的组件都不会被缓存，其中 exclude 的优先级比 include 高</li>
+<li>对应两个钩子函数 activated 和 deactivated，当组件被激活时，触发钩子函数 activated，当组件被移除时，触发钩子函数 deactivated</li>
+</ul>
 <h2 id="vue中data为什么要return"><a href="#vue中data为什么要return" class="headerlink" title="vue中data为什么要return"></a>vue中data为什么要return</h2><p>不使用 return 包裹的数据会在项目的全局可见，会造成变量污染；使用 return 包裹的数据中变量只在当前组件中生效，不影响其他组件</p>
 <h2 id="mixins-和-Composition-API-的区别"><a href="#mixins-和-Composition-API-的区别" class="headerlink" title="mixins 和 Composition API 的区别"></a>mixins 和 Composition API 的区别</h2><p>mixins 问题：</p>
 <ul>
@@ -634,6 +640,127 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <ul>
 <li>代码提取，Composition API 很容易提取逻辑</li>
 <li>代码重用，将模块导入到组件中，然后调用</li>
+</ul>
+<h2 id="说说你对-SPA-单页面的理解，它的优缺点是什么？"><a href="#说说你对-SPA-单页面的理解，它的优缺点是什么？" class="headerlink" title="说说你对 SPA 单页面的理解，它的优缺点是什么？"></a>说说你对 SPA 单页面的理解，它的优缺点是什么？</h2><p>SPA 仅在 Web 页面初始化时加载相应的 HTML、JavaScript 和 CSS。页面一旦加载完成，SPA 不会因为用户的操作而进行页面的重新加载或跳转；取而代之的利用路由机制实现 HTML 内容的变换，UI 与用户的交互，避免页面的重新加载。</p>
+<p>优点：</p>
+<ul>
+<li>用户体验好，内容的改变不需要重新加载整个页面，避免了不必要的跳转和重复渲染</li>
+<li>基于上面一点，SPA 相对于服务器压力小</li>
+<li>前后端职责分离，架构清晰，前端进行交互逻辑。后端负责数据处理</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>初次加载耗时多：为实现单页 Web 应用功能及显示效果，需要在加载页面的时候将 JavaScript、CSS 统一加载，部分页面按需加载</li>
+<li>前进后退路由管理：由于单页应用在一个页面中显示所有内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理</li>
+<li>SEO 难度较大：由于所有的内容都在一个页面中动态替换显示，所以在 SEO 上有着天然的劣势</li>
+</ul>
+<h2 id="v-show-与-v-if-有什么区别？"><a href="#v-show-与-v-if-有什么区别？" class="headerlink" title="v-show 与 v-if 有什么区别？"></a>v-show 与 v-if 有什么区别？</h2><p>v-show 是通过设置 DOM 元素的 display 样式属性控制显隐；v-if 是动态的向 DOM 树内添加或删除 DOM 元素。</p>
+<p>v-if 是真正的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建；也是惰性的。如果在初始渲染时条件为假，则什么都不做，直到条件第一次变为真时，才会开始渲染条件块。</p>
+<p>v-show 不管条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 的 “display” 属性进行切换。</p>
+<p>所以 v-if 适用于在运行时很少改变条件，不需要频繁切换条件的场景；v-show 则适用于需要非常频繁切换条件的场景。</p>
+<h2 id="computed-和-watch-的区别和运用的场景？"><a href="#computed-和-watch-的区别和运用的场景？" class="headerlink" title="computed 和 watch 的区别和运用的场景？"></a>computed 和 watch 的区别和运用的场景？</h2><p>computed：计算属性，依赖其它属性值，并且 computed 的值有缓存，只有它依赖的属性值发生改变，下一次获取 computed 的值时才会重新计算 computed 的值</p>
+<p>watch：监听数据，每当监听的数据变化时，都会执行回调进行后续操作</p>
+<h2 id="谈谈你对-Vue-生命周期的理解"><a href="#谈谈你对-Vue-生命周期的理解" class="headerlink" title="谈谈你对 Vue 生命周期的理解"></a>谈谈你对 Vue 生命周期的理解</h2><p>开始创建、初始化数据、编译模板、挂载 DOM、渲染、更新、渲染、卸载</p>
+<table>
+<thead>
+<tr>
+<th>生命周期</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>beforeCreate</td>
+<td>组件实例创建之前，组件属性生效之前</td>
+</tr>
+<tr>
+<td>created</td>
+<td>组件实例已经完全创建，属性也绑定，但真实 dom 还没生成</td>
+</tr>
+<tr>
+<td>beforeMount</td>
+<td>在挂载开始之前调用，相关的 render 函数首次被调用</td>
+</tr>
+<tr>
+<td>mounted</td>
+<td>挂载到实例上</td>
+</tr>
+<tr>
+<td>beforeUpdate</td>
+<td>组件数据更新之前调用，发生在虚拟 DOM 打补丁之前</td>
+</tr>
+<tr>
+<td>update</td>
+<td>组件数据更新之后</td>
+</tr>
+<tr>
+<td>activated</td>
+<td>keep-alive 专属，组件被激活时调用</td>
+</tr>
+<tr>
+<td>deactivated</td>
+<td>keep-alive 专属，组件被销毁时调用</td>
+</tr>
+<tr>
+<td>beforeDestroy</td>
+<td>组件销毁前调用</td>
+</tr>
+<tr>
+<td>destroyed</td>
+<td>组件销毁后调用</td>
+</tr>
+</tbody></table>
+<h2 id="Vue-组件间通信有哪几种方式？"><a href="#Vue-组件间通信有哪几种方式？" class="headerlink" title="Vue 组件间通信有哪几种方式？"></a>Vue 组件间通信有哪几种方式？</h2><ul>
+<li>父子组件通信：props、$emit</li>
+<li>隔代组件通信：$attrs 和 $listeners、provide 和 inject、eventBus、Vuex</li>
+<li>兄弟组件通信：eventBus、Vuex</li>
+</ul>
+<h2 id="Proxy-与-Object-defineProperty-优劣对比"><a href="#Proxy-与-Object-defineProperty-优劣对比" class="headerlink" title="Proxy 与 Object.defineProperty 优劣对比"></a>Proxy 与 Object.defineProperty 优劣对比</h2><p>Proxy 优势：</p>
+<ul>
+<li>Proxy 可以直接监听对象而非属性</li>
+<li>Proxy 可以直接监听数组的变化</li>
+<li>Proxy 有多达 13种拦截方法，不限于 apply、ownKeys、deleteProperty、has 等等 都是 Object.definePeoperty 不具备的</li>
+<li>Proxy 返回的是一个新对象，我们可以只操作新的对象达到目的，而 Object.defineProperty 只能遍历对象属性直接修改</li>
+</ul>
+<p>Object.defineProperty 优势：</p>
+<ul>
+<li>兼容性好，支持 IE9</li>
+</ul>
+<h2 id="虚拟-DOM-实现原理"><a href="#虚拟-DOM-实现原理" class="headerlink" title="虚拟 DOM 实现原理"></a>虚拟 DOM 实现原理</h2><ul>
+<li>用 JavaScript 对象模拟真实 DOM 树，对真实 DOM 进行抽象</li>
+<li>diff 算法 —— 比较两棵 DOM 树的差异</li>
+<li>pach 算法 —— 将两个虚拟 DOM 对象的差异应用到真实的 DOM 树上</li>
+</ul>
+<h2 id="Vue-中的-key-有什么作用"><a href="#Vue-中的-key-有什么作用" class="headerlink" title="Vue 中的 key 有什么作用"></a>Vue 中的 key 有什么作用</h2><p>key 作为 Vue 中 vnode 的唯一标记，通过这个 key，diff 操作可以更准确、更快速。</p>
+<h2 id="Vue-项目的优化"><a href="#Vue-项目的优化" class="headerlink" title="Vue 项目的优化"></a>Vue 项目的优化</h2><p>（1）代码层面的优化</p>
+<ul>
+<li>v-if 和 v-show 区分使用场景</li>
+<li>computed 和 watch 区分使用场景</li>
+<li>v-for 遍历添加 key</li>
+<li>长列表性能优化</li>
+<li>事件的销毁</li>
+<li>图片资源懒加载</li>
+<li>路由懒加载</li>
+<li>第三方插件的按需引入</li>
+<li>优化无限列表性能</li>
+<li>服务器渲染 SSR</li>
+</ul>
+<p>（2） webpack 层面的优化</p>
+<ul>
+<li>webpack 对图片的压缩</li>
+<li>减少 ES6 转为 ES5 的冗余代码</li>
+<li>提取公共代码</li>
+<li>模板预编译</li>
+<li>提取组件的 CSS</li>
+<li>优化 SourceMap</li>
+<li>构建结果输出分析</li>
+<li>Vue 项目的编译优化</li>
+</ul>
+<p>（3）基础的 Web 技术的优化</p>
+<ul>
+<li>开启 gzip 压缩</li>
+<li>浏览器缓存</li>
+<li>CDN 使用</li>
+<li>使用 Chrome Performance 查找性能瓶颈</li>
 </ul>
 
   
@@ -669,10 +796,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-10T10:12:31+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-12T10:41:53+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月10日</p>
+    <p>更新于：2021年10月12日</p>
   </a>
 </div>
 
@@ -795,7 +922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-%E5%92%8C-gulp-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">webpack 和 gulp 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redux-%E7%94%A8%E5%A4%84"><span class="toc-number">2.</span> <span class="toc-text">redux 用处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">vue 双向绑定原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-%E5%92%8C-react-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">vue 和 react 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C"><span class="toc-number">4.1.</span> <span class="toc-text">相同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB"><span class="toc-number">4.2.</span> <span class="toc-text">区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#promise-%E7%9A%84%E7%8A%B6%E6%80%81%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">5.</span> <span class="toc-text">promise 的状态有哪些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%A7%BB%E9%99%A4%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">6.</span> <span class="toc-text">数据移除第一个元素的方法有哪些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-%E4%B8%AD%E4%BD%BF%E7%94%A8-keep-alive-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">7.</span> <span class="toc-text">vue 中使用 keep-alive 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E4%B8%ADdata%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81return"><span class="toc-number">8.</span> <span class="toc-text">vue中data为什么要return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mixins-%E5%92%8C-Composition-API-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">9.</span> <span class="toc-text">mixins 和 Composition API 的区别</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-%E5%92%8C-gulp-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">webpack 和 gulp 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redux-%E7%94%A8%E5%A4%84"><span class="toc-number">2.</span> <span class="toc-text">redux 用处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">vue 双向绑定原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-%E5%92%8C-react-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">vue 和 react 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C"><span class="toc-number">4.1.</span> <span class="toc-text">相同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB"><span class="toc-number">4.2.</span> <span class="toc-text">区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#promise-%E7%9A%84%E7%8A%B6%E6%80%81%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">5.</span> <span class="toc-text">promise 的状态有哪些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%A7%BB%E9%99%A4%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">6.</span> <span class="toc-text">数据移除第一个元素的方法有哪些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-%E4%B8%AD%E4%BD%BF%E7%94%A8-keep-alive-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">7.</span> <span class="toc-text">vue 中使用 keep-alive 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E4%B8%ADdata%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81return"><span class="toc-number">8.</span> <span class="toc-text">vue中data为什么要return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mixins-%E5%92%8C-Composition-API-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">9.</span> <span class="toc-text">mixins 和 Composition API 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E8%AF%B4%E4%BD%A0%E5%AF%B9-SPA-%E5%8D%95%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E5%AE%83%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">10.</span> <span class="toc-text">说说你对 SPA 单页面的理解，它的优缺点是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-show-%E4%B8%8E-v-if-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">v-show 与 v-if 有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#computed-%E5%92%8C-watch-%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E8%BF%90%E7%94%A8%E7%9A%84%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="toc-number">12.</span> <span class="toc-text">computed 和 watch 的区别和运用的场景？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%88%E8%B0%88%E4%BD%A0%E5%AF%B9-Vue-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-number">13.</span> <span class="toc-text">谈谈你对 Vue 生命周期的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="toc-number">14.</span> <span class="toc-text">Vue 组件间通信有哪几种方式？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proxy-%E4%B8%8E-Object-defineProperty-%E4%BC%98%E5%8A%A3%E5%AF%B9%E6%AF%94"><span class="toc-number">15.</span> <span class="toc-text">Proxy 与 Object.defineProperty 优劣对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F-DOM-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">16.</span> <span class="toc-text">虚拟 DOM 实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-%E4%B8%AD%E7%9A%84-key-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="toc-number">17.</span> <span class="toc-text">Vue 中的 key 有什么作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">18.</span> <span class="toc-text">Vue 项目的优化</span></a></li></ol>
     </div>
   </section>
 
